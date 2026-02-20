@@ -8,6 +8,7 @@
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "start": "serve -s dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -33,5 +34,9 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0-alpha.30",
     "vite": "5.3.3"
+  }
+  ,
+  "dependencies": {
+    "serve": "^14.2.0"
   }
 }
