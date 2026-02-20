@@ -1,0 +1,19 @@
+
+> kodbanking-backend@1.0.0 dev
+> nodemon src/index.ts
+
+[33m[nodemon] 3.1.13[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+Server running on http://localhost:3001
+Register error details: Error: Table 'defaultdb.kodusers' doesn't exist
+    at PromisePool.execute (D:\OneDrive\Desktop\kodbanking\backend\node_modules\mysql2\lib\promise\pool.js:54:22)
+    at D:\OneDrive\Desktop\kodbanking\backend\src\routes\register.ts:21:16 {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sql: 'INSERT INTO kodusers (uid, username, email, password, balance, phone, role) VALUES (?, ?, ?, ?, 100000, ?, ?)',
+  sqlState: '42S02',
+  sqlMessage: "Table 'defaultdb.kodusers' doesn't exist"
+}

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production
+dist/
+**/dist/
+
+# Environment
+.env
+.env.local
+**/ .env
+**/ .env.local
+
+# Logs
+*.log
+**/ *.log
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
