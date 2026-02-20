@@ -13,10 +13,12 @@ export default function Register() {
     role: 'Customer',
   })
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+    setLoading(true)
 
     try {
       const res = await fetch(`${API_URL}/api/register`, {
@@ -29,12 +31,14 @@ export default function Register() {
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
         setError(data.error || `Registration failed (${res.status})`)
+        setLoading(false)
         return
       }
       navigate('/login')
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'Network error. Is the backend running on port 3001?'
       setError(msg)
+      setLoading(false)
     }
   }
 
@@ -88,7 +92,9 @@ export default function Register() {
           <option value="Customer">Customer</option>
         </select>
         {error && <p className="error">{error}</p>}
-        <button type="submit">Register</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Creating Account...' : 'Register'}
+        </button>
       </form>
       <p>
         Already have an account? <Link to="/login">Login</Link>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import * as confetti from 'canvas-confetti'
+import confetti from 'canvas-confetti'
 import { API_URL } from '../config'
 
 export default function Dashboard() {

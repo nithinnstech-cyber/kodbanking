@@ -7,10 +7,12 @@ export default function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+    setLoading(true)
 
     try {
       const res = await fetch(`${API_URL}/api/login`, {
@@ -24,12 +26,14 @@ export default function Login() {
 
       if (!res.ok) {
         setError(data.error || 'Login failed')
+        setLoading(false)
         return
       }
 
       navigate('/dashboard')
     } catch {
       setError('Login failed')
+      setLoading(false)
     }
   }
 
@@ -55,7 +59,9 @@ export default function Login() {
           required
         />
         {error && <p className="error">{error}</p>}
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
       </form>
       <p>
         Don&apos;t have an account? <Link to="/register">Register</Link>
