@@ -1,0 +1,28 @@
+remote: error: GH013: Repository rule violations found for refs/heads/main.        
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   —————————————————————————————————————————        
+remote:     Resolve the following violations before pushing again        
+remote: 
+remote:     - Push cannot contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a blocked push        
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push        
+remote:             
+remote:             
+remote:       —— Aiven Service Password ————————————————————————————        
+remote:        locations:        
+remote:          - commit: 5c77a83d5dff98433e917b021767872722f14044        
+remote:            path: SETUP.md:14        
+remote:          - commit: 5c77a83d5dff98433e917b021767872722f14044        
+remote:            path: backend/.env.example:5        
+remote:             
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.        
+remote:        https://github.com/nithinnstech-cyber/kodbanking/security/secret-scanning/unblock-secret/39v4CXCf8yUVDLbHi9afwUZxhut        
+remote:             
+remote: 
+remote: 
+To https://github.com/nithinnstech-cyber/kodbanking.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/nithinnstech-cyber/kodbanking.git'
