@@ -8,7 +8,14 @@ import balanceRouter from './routes/balance';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://nithinnstech-cyber.github.io',
+    'https://kodbanking-fbs8.onrender.com'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 

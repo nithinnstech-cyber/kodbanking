@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import confetti from 'canvas-confetti'
+import * as confetti from 'canvas-confetti'
+import { API_URL } from '../config'
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -13,7 +14,7 @@ export default function Dashboard() {
     setError('')
 
     try {
-      const res = await fetch('/api/balance', {
+      const res = await fetch(`${API_URL}/api/balance`, {
         credentials: 'include',
       })
 
